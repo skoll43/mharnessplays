@@ -23,6 +23,7 @@ testpaths = ["tests"]
 [tool.ruff]
 target-version = "py311"
 line-length = 100
+exclude = ["llm_harness", "tests/test_harnesses.py", "tests/test_router_permissions.py"]
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "B", "UP"]

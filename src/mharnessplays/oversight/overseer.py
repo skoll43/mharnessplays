@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from collections import deque
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from mharnessplays.contracts import ActionProposal, BeliefState, EffectorReport, IncidentPacket
 
@@ -27,7 +27,7 @@ class Overseer:
         incident_id = f"incident-{belief.tick}-{len(self._reports)}"
         return IncidentPacket(
             incident_id=incident_id,
-            created_at=datetime.now(timezone.utc).isoformat(),
+            created_at=datetime.now(UTC).isoformat(),
             trigger=trigger,
             belief_state=belief,
             last_actions=list(self._actions),

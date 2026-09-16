@@ -5,7 +5,6 @@ from collections import deque
 from mharnessplays.belief.transition_suspender import TransitionSuspender
 from mharnessplays.contracts import BeliefState, PerceptionObservation
 
-
 LEGAL_TRANSITIONS: dict[str, set[str]] = {
     "OVERWORLD": {"OVERWORLD", "MENU", "DIALOGUE", "TRANSITION", "BATTLE"},
     "MENU": {"MENU", "OVERWORLD", "TRANSITION"},

@@ -7,7 +7,14 @@ from mharnessplays.perception.tile_hasher import TileHasher
 
 
 def _frame(frame_id: int, tick: int, value: int) -> Frame:
-    return Frame(frame_id=frame_id, tick=tick, timestamp_ms=tick * 16, width=8, height=8, pixels=bytes([value] * 64))
+    return Frame(
+        frame_id=frame_id,
+        tick=tick,
+        timestamp_ms=tick * 16,
+        width=8,
+        height=8,
+        pixels=bytes([value] * 64),
+    )
 
 
 def test_tile_hash_stability() -> None:

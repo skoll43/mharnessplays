@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -27,7 +26,7 @@ class PerceptionObservation:
     scene_class: str
     scene_confidence: float
     ui_state: dict
-    text: Optional[str]
+    text: str | None
     text_confidence: float
     visual_delta: float
     transition_detected: bool
@@ -40,11 +39,11 @@ class BeliefState:
     tick: int
     game_state: str
     game_state_confidence: float
-    position_estimate: Optional[Position]
+    position_estimate: Position | None
     position_confidence: float
-    menu_context: Optional[dict]
-    battle_context: Optional[dict]
-    text_context: Optional[dict]
+    menu_context: dict | None
+    battle_context: dict | None
+    text_context: dict | None
     uncertain: bool
     suspended: bool
 
@@ -64,8 +63,8 @@ class ActionProposal:
 class ValidationResult:
     action_id: str
     allowed: bool
-    downgraded_to: Optional[str]
-    reason: Optional[str]
+    downgraded_to: str | None
+    reason: str | None
 
 
 @dataclass(frozen=True)
@@ -76,7 +75,7 @@ class EffectorReport:
     end_tick: int
     expected_delta: dict
     observed_delta: dict
-    failure_reason: Optional[str]
+    failure_reason: str | None
 
 
 @dataclass(frozen=True)
@@ -101,5 +100,5 @@ class PatchProposal:
     type: str
     diff_ref: str
     tests_required: list[str]
-    rollback_ref: Optional[str]
+    rollback_ref: str | None
     status: str

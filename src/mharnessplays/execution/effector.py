@@ -67,4 +67,11 @@ class VisualServoingEffector:
 
 def make_dummy_frame(frame_id: int, tick: int, value: int) -> Frame:
     pixels = bytes([value] * 64)
-    return Frame(frame_id=frame_id, tick=tick, timestamp_ms=tick * 16, width=8, height=8, pixels=pixels)
+    return Frame(
+        frame_id=frame_id,
+        tick=tick,
+        timestamp_ms=tick * 16,
+        width=8,
+        height=8,
+        pixels=pixels,
+    )

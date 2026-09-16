@@ -4,13 +4,17 @@ from pathlib import Path
 
 import pytest
 
+from mharnessplays.belief.transition_suspender import TransitionSuspender
 from mharnessplays.contracts import ActionProposal, BeliefState, PerceptionObservation
 from mharnessplays.meta.pipeline import ProposalPipeline
 from mharnessplays.safety.action_validator import ActionValidator
-from mharnessplays.belief.transition_suspender import TransitionSuspender
 
 
-def _belief(uncertain: bool = False, suspended: bool = False, state: str = "OVERWORLD") -> BeliefState:
+def _belief(
+    uncertain: bool = False,
+    suspended: bool = False,
+    state: str = "OVERWORLD",
+) -> BeliefState:
     return BeliefState(
         frame_id=1,
         tick=1,

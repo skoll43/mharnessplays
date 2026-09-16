@@ -4,7 +4,13 @@ from mharnessplays.belief.tracker import BeliefTracker
 from mharnessplays.contracts import PerceptionObservation
 
 
-def _obs(frame_id: int, tick: int, scene: str, confidence: float, transition: bool = False) -> PerceptionObservation:
+def _obs(
+    frame_id: int,
+    tick: int,
+    scene: str,
+    confidence: float,
+    transition: bool = False,
+) -> PerceptionObservation:
     return PerceptionObservation(
         frame_id=frame_id,
         tick=tick,

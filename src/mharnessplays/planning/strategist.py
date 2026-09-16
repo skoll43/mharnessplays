@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 
 @dataclass(frozen=True)
@@ -9,7 +8,7 @@ class StrategicDirective:
     directive_id: str
     goal: str
     priority: int
-    target_node: Optional[str]
+    target_node: str | None
     constraints: dict
     issued_at_tick: int
 
