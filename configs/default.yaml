@@ -1,0 +1,27 @@
+mode: bootstrap
+pixel_only: true
+allow_ram_reads: false
+allow_live_hot_patch: false
+allow_llm_direct_input: false
+
+perception:
+  tile_hashing: true
+  frame_differencing: true
+  scene_classification: true
+  ocr: limited
+  confidence_threshold: 0.7
+
+belief:
+  temporal_smoothing: true
+  max_uncertain_frames: 30
+
+safety:
+  low_confidence_action: SAFE_PAUSE
+  transition_block_input: true
+  max_repeated_failures: 5
+
+meta:
+  proposal_mode: true
+  live_patch_mode: false
+  require_replay_validation: true
+  require_shadow_comparison: true
