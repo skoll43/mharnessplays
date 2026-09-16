@@ -1,0 +1,4 @@
+proposal_mode: true
+live_patch_mode: false
+require_replay_validation: true
+require_shadow_comparison: true

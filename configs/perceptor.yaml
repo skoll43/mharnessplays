@@ -1,0 +1,8 @@
+scene_classes:
+  - OVERWORLD
+  - BATTLE
+  - MENU
+  - DIALOGUE
+  - TRANSITION
+text_box_threshold: 0.1
+transition_delta_threshold: 0.35
